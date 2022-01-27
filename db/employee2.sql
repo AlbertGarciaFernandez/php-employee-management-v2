@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 27, 2022 at 09:35 AM
+-- Generation Time: Jan 27, 2022 at 10:12 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -20,6 +20,34 @@ SET time_zone = "+00:00";
 --
 -- Database: `employee2`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employees`
+--
+
+CREATE TABLE `employees` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `lasName` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `gender` varchar(10) DEFAULT NULL,
+  `streetAdress` varchar(250) DEFAULT NULL,
+  `city` varchar(80) DEFAULT NULL,
+  `state` varchar(80) DEFAULT NULL,
+  `postalCode` varchar(5) DEFAULT NULL,
+  `phoneNumber` varchar(9) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `employees`
+--
+
+INSERT INTO `employees` (`id`, `name`, `lasName`, `email`, `gender`, `streetAdress`, `city`, `state`, `postalCode`, `phoneNumber`) VALUES
+(1, 'Alina', 'Schulz', 'alinaschulz@gmail.com', 'female', '123', 'Hamburg', 'Hamburg', '29698', '622325432'),
+(2, 'Andres', 'Pastrana', 'andrespastrana@gmail.com', 'male', '234', 'Bogota', 'Cundinamarca', '28982', '643224212'),
+(3, 'Albert', 'Garabito', 'albertgarabito@gmail.com', 'male', '421', 'Barcelona', 'Catalonia', '29832', '987654324');
 
 -- --------------------------------------------------------
 
@@ -46,6 +74,12 @@ INSERT INTO `users` (`userId`, `name`, `pass`, `email`) VALUES
 --
 
 --
+-- Indexes for table `employees`
+--
+ALTER TABLE `employees`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -54,6 +88,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `employees`
+--
+ALTER TABLE `employees`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
