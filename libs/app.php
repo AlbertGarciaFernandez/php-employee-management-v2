@@ -24,6 +24,7 @@ if(isset($url[1])){
 }
 
       } else {
+          require_once "controllers/errors.php";
 $controller = new Errors();
       }
     }
