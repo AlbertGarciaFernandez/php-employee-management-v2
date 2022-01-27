@@ -11,6 +11,7 @@ class App{
       $filecontroller = "controllers/LoginController.php";
       require_once $filecontroller;
       $controller = new logInController();
+      $controller->loadModel($url[0]);
       return false;
     }
 
@@ -18,6 +19,7 @@ class App{
       if(file_exists($filecontroller)){
         require_once $filecontroller;
         $controller = new $url[0];
+        $controller->loadModel($url[0]);
 
 if(isset($url[1])){
   $controller->{$url[1]}();
