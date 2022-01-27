@@ -1,13 +1,13 @@
 <?php
 
-class Main extends Controller{
+class loginController extends Controller{
     function __construct()
     {
         parent::__construct();
-        $this->view->render("main/index");
+        $this->view->render("login/index");
     }
 
-    public function hello(){
+    public function logIn(){
         echo "You said hello";
     }
 }

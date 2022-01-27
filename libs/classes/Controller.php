@@ -5,4 +5,8 @@ class Controller{
     {
         $this->view = new View();
     }
+
+    public function logIn(){
+        echo "Hola soz login";
+    }
 }

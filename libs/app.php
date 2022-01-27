@@ -10,7 +10,7 @@ class App{
     if(empty($url[0])){
       $filecontroller = "controllers/LoginController.php";
       require_once $filecontroller;
-      $controller = new Main();
+      $controller = new logInController();
       return false;
     }
 
