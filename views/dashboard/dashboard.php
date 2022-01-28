@@ -1,7 +1,6 @@
 <?php
 // TODO Main view or Employees Grid View here is where you get when logged here there's the grid of employees
-//require '../assets/html/header.php';
-
+require ASSETS . "html/header.php";
 ?>
 
 <!-- todo Import here because if we import in header.html it doesn't work-->
@@ -17,7 +16,7 @@
 <!-- todo when the page load call function to fill the table -->
 <body onload=" callGrid(); ">
     <?php
-        //require '../assets/html/navbar.php';
+        require ASSETS . "html/navbar.php";
     ?>
 
     <section>

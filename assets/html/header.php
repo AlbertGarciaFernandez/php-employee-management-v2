@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="./../node_modules/bootstrap/dist/css/bootstrap.min.css">
 
         <!-- todo  Import CSS and Javascript-->
-        <link rel="stylesheet" href="../assets/css/main.css">
+        <link rel="stylesheet" href="<?= ASSETS?>css/main.css">
         <!-- <script src="../assets/js/index.js" defer></script> -->
         <!-- <script src="../assert" defer></script> -->
         <title> Rocket Employee Management </title>
