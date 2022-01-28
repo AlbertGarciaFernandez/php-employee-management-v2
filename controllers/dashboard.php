@@ -8,7 +8,7 @@ class dashboard extends Controller{
 
     public function getEmployees(){
         $resultArray = $this->model->getEmployees();
-        return $resultArray;
+        echo json_encode($resultArray);
     }
 
 }

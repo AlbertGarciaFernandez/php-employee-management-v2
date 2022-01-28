@@ -2,43 +2,31 @@
 // TODO Main view or Employees Grid View here is where you get when logged here there's the grid of employees
 require ASSETS . "html/header.php";
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../node_modules/jsgrid/dist/jsgrid.min.css">
-    <link rel="stylesheet" href="../node_modules/jsgrid/dist/jsgrid-theme.min.css">
-    <link rel="stylesheet" href="<?=ASSETS?>css/main.css">
-</head>
-<body class="d-flex flex-column h-100" data-new-gr-c-s-check-loaded="14.1043.0" data-gr-ext-installed="">
-<?php
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<link rel="stylesheet" href="<?=BASE_URL?>/assets/css/main.css">
+<script src="<?=BASE_URL?>/assets/js/index.js"  defer></script>
+<!-- todo when the page load call function to fill the table -->
+<body>
+    <?php
         require ASSETS . "html/navbar.php";
     ?>
-<?php require_once "../assets/html/header.php" ?>
 
+    <section>
+        <!-- todo main section  -->
+        <div id="jsGrid"> </div>
+    </section>
 
-<!-- Begin page content -->
-<main role="main" class="flex-shrink-0">
-  <div class="container">
-    <div id="jsGrid"></div>
-  </div>
-</main>
-
-<?php
-//require(".././assets/html/footer.html");
-?>
-
-<script src="../node_modules/jquery/dist/jquery.min.js"></script>
-<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../node_modules/jsgrid/dist/jsgrid.min.js"></script>
-<script src="../assets/js/index.js"></script>
-
-      
-  
+    <?php
+        //require '../assets/html/footer.php';
+    ?>
 
 </body>
+
 </html>
