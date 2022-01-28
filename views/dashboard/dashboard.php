@@ -23,8 +23,11 @@ require ASSETS . "html/header.php";
     ?>
 
     <section>
-        <!-- todo main section  -->
-        <div id="jsGrid"> </div>
+    <main role="main" class="flex-shrink-0">
+  <div class="container">
+    <div id="jsGrid"></div>
+  </div>
+</main>
     </section>
 
     <?php
@@ -34,3 +37,8 @@ require ASSETS . "html/header.php";
 </body>
 
 </html>
+
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../node_modules/jsgrid/dist/jsgrid.min.js"></script>
+<script src="../assets/js/dashboard.js"></script>
