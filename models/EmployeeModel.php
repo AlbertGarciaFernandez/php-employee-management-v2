@@ -1,43 +1,90 @@
-<?php 
-require_once("./employeeManager.php");
+<?php
+/**
+ * EMPLOYEE FUNCTIONS LIBRARY
+ *
+ * @author: Jose Manuel Orts
+ * @date: 11/06/2020
+ */
 
-$method = $_SERVER['REQUEST_METHOD']; //Receive the the method of the request(GET, POST, DELETE
-
-switch ($method) {
-
-    case "GET":
-        if(isset($_GET["getEmployees"])) {
-            $resultArray = getEmployees();
-            echo json_encode($resultArray);
-            break;
-        }
-
-    case "POST":
-        if (isset($_GET['addEmployee_Form'])) {
-            $newEmployee = $_POST;
-            $result = addEmployee($newEmployee);
-            header("Location: ../employee.php?id=".$result["id"]."&created");
-            break;
-            }
-        elseif (isset($_GET['editEmployee_Form'])) {
-            $newEmployee = $_POST;
-            $result = updateEmployee($newEmployee);
-            header("Location: ../employee.php?id=".$result["id"]."&updated");
-            break;
-            }
-        elseif(isset($_GET['addEmployee'])) {
-            $newEmployee = $_POST;
-            $result = addEmployee($newEmployee);
-            break;
-            }
-    case "DELETE":
-        parse_str(file_get_contents("php://input"),$delete_vars);
-        try {
-            deleteEmployee($delete_vars['id']);
-            http_response_code(202);
-        } catch (Throwable $th) {
-            http_response_code(404);
-        }
-        break;
-
+function addEmployee(array $newEmployee)
+{
+        $employees = getEmployees();
+        $newId = 1 + getNextIdentifier($employees);
+        $newEmployee["id"] = $newId;
+        array_push($employees, $newEmployee);
+        file_put_contents("../../resources/employees.json", json_encode($employees, JSON_PRETTY_PRINT));
+        return $newEmployee;
 }
+
+function deleteEmployee(string $id)
+{
+    $json = file_get_contents('../../resources/employees.json');
+    $data = json_decode($json, true);
+    unset($json); //prevent memory leaks for large json
+
+    $deleted = false;
+        for ($i=0; $i < count($data); $i++) { 
+            if(intval($id) == $data[$i]["id"] ){
+                unset($data[$i]);
+                $deleted = true;
+                break;
+            }
+        }
+
+    if($deleted){
+        //This avoids a weird bug when deleting something from the middle of the array.
+        $newArray =array();
+        $newArray = array_merge($data,$newArray);
+        //save the file
+        file_put_contents('../../resources/employees.json',json_encode($newArray, JSON_PRETTY_PRINT));
+        unset($data);//release memory
+    }
+    else{
+        unset($data);//release memory
+        throw new Exception("Not found");
+    }
+}
+
+function updateEmployee(array $updateEmployee)
+{
+    $employees = getEmployees();
+    $employeeKey = array_search($updateEmployee["id"], array_column($employees, "id"));
+    $employees[$employeeKey] = $updateEmployee;
+    $employees = array_merge($employees, array());
+    file_put_contents("../../resources/employees.json", json_encode($employees, JSON_PRETTY_PRINT));
+    return $updateEmployee;
+}
+
+
+function getEmployee(string $id)
+{
+    $json = file_get_contents('../resources/employees.json');
+    $employees = json_decode($json,true);
+    $employee = $employees[array_search($id, array_column($employees, "id"))];
+    return $employee;
+}
+
+function removeAvatar($id)
+{
+// TODO implement it
+}
+
+function getQueryStringParameters(): array
+{
+// TODO implement it
+}
+
+function getNextIdentifier(array $employeesCollection): int
+{
+$object = array_reduce($employeesCollection, function ($x, $y) {
+    return $x ? ($x["id"] > $y["id"] ? $x : $y) : $y;
+  });
+  return $object["id"];
+}
+
+function getEmployees()
+ {
+    $json = file_get_contents('../../resources/employees.json');
+    $data = json_decode($json,true);
+    return $data;
+ }
