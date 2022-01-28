@@ -8,9 +8,9 @@ class App{
       $url = explode("/", $url);
 
     if(empty($url[0])){
-      $filecontroller = "controllers/LoginController.php";
+      $filecontroller = "controllers/login.php";
       require_once $filecontroller;
-      $controller = new logInController();
+      $controller = new login();
       $controller->loadModel($url[0]);
       return false;
     }
