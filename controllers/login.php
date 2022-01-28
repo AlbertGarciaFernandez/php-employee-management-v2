@@ -19,7 +19,10 @@ class login extends Controller{
                 session_start();
                 $_SESSION["admin"] = $userCheck["name"];
                 unset($_POST);
-                 header(BASE_URL . "dashboard");
+                 header("Location:" .BASE_URL . "/dashboard");
+                 echo BASE_URL;
+             } else {
+                 echo "wrong Password";
              }
           }
     }

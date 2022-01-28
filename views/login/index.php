@@ -19,7 +19,7 @@
               <div class="mb-md-5 mt-md-4 pb-5">
                 <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                 <p class="text-white-50 mb-5">Please enter your login and password!</p>
-                <form action="http://localhost/php-employee-management-v2/login/logIn" method="post">
+                <form action="<?php echo  BASE_URL ?>/login/logIn" method="post">
                   <div class="form-outline form-white mb-4">
                     <input name="email" type="text" id="typeEmailX" class="form-control form-control-lg" />
                     <label class="form-label" for="typeEmailX">Email</label>
