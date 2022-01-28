@@ -1,12 +1,13 @@
 <?php
-/**
- * EMPLOYEE FUNCTIONS LIBRARY
- *
- * @author: Jose Manuel Orts
- * @date: 11/06/2020
- */
 
-function addEmployee(array $newEmployee)
+
+class employeeModel extends Model {
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    function addEmployee(array $newEmployee)
 {
         $employees = getEmployees();
         $newId = 1 + getNextIdentifier($employees);
@@ -88,3 +89,5 @@ function getEmployees()
     $data = json_decode($json,true);
     return $data;
  }
+}
+

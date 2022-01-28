@@ -5,4 +5,10 @@ class dashboard extends Controller{
         parent::__construct();
         $this->view->render("dashboard/dashboard");
     }
+
+    public function getEmployees(){
+        $resultArray = $this->model->getEmployees();
+        return $resultArray;
+    }
+
 }
