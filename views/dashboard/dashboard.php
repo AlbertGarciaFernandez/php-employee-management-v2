@@ -41,4 +41,4 @@ require ASSETS . "html/header.php";
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../node_modules/jsgrid/dist/jsgrid.min.js"></script>
-<script src="../assets/js/dashboard.js"></script>
+<script src="../assets/js/index.js"></script>
