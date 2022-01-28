@@ -8,6 +8,13 @@ class loginController extends Controller{
     }
 
     public function logIn(){
-        echo "You said hello";
+        $user = $_POST["email"];
+        $pass = $_POST["password"];
+        $userCheck = $this->model->userCheck($user);
+        if($userCheck !== false){
+            print_r($userCheck);
+        } else {
+            echo "Null motherfucker";
+        }
     }
 }
