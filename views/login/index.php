@@ -29,7 +29,7 @@
                     <input name="password" type="password" id="typePasswordX" class="form-control form-control-lg" />
                     <label class="form-label" for="typePasswordX">Password</label>
                     <br>
-                    <label class="form-label" for="typePasswordX"><?= isset($_GET["InvalidPassword"]) ? "Invalid Email or Password" : "" ?></label>
+                    <label class="form-label" for="typePasswordX"><?= isset($_GET["loginError"]) ? "Invalid email, user or Password" : "" ?></label>
                   </div>
                   <button class="btn btn-outline-light btn-lg px-5" type="submit" name="submitLogin">Login</button>
                 </form>

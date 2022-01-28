@@ -22,8 +22,32 @@ class login extends Controller{
                  header("Location:" .BASE_URL . "/dashboard");
                  echo BASE_URL;
              } else {
-                 echo "wrong Password";
+                header("Location:". BASE_URL . "/login?loginError");
              }
           }
+    }
+    public function logout(){
+        session_start();
+
+        $_SESSION = array();
+    
+        if (ini_get("session.use_cookies")) {
+            $params = session_get_cookie_params();
+            setcookie(
+                session_name(),
+                '',
+                time() - 42000,
+                $params["path"],
+                $params["domain"],
+                $params["secure"],
+                $params["httponly"]
+            );
+        }
+    
+        session_destroy();
+    
+        header("Location:". BASE_URL . "/login?logOut");
+    
+    
     }
 }
