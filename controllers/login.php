@@ -15,7 +15,10 @@ class login extends Controller{
              header(BASE_URL);
           } else {
              $passCheck = password_verify($pass, $userCheck["pass"]);
-             if($passCheck){
+             if($passCheck === true){
+                session_start();
+                $_SESSION["admin"] = $userCheck["name"];
+                unset($_POST);
                  header(BASE_URL . "dashboard");
              }
           }
