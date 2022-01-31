@@ -15,7 +15,5 @@ class Controller{
             $this->model = new $modelName();
         }
     }
-    public function logIn(){
-        echo "Hola soz login";
-    }
+
 }

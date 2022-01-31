@@ -1,5 +1,22 @@
 <?php 
 //require_once("./employeeManager.php");
+class employee extends Controller{
+    function __construct()
+    {
+        parent::__construct();
+    }
+
+    public function render(){
+        $this->view->render("dashboard/dashboard");
+    }
+    
+    public function getEmployeesDashboard(){
+        $resultArray = $this->model->getEmployees();
+        return $resultArray;
+    }
+
+}
+
 
 $method = $_SERVER['REQUEST_METHOD']; //Receive the the method of the request(GET, POST, DELETE
 

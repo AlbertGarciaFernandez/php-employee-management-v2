@@ -12,6 +12,7 @@ class App{
       require_once $filecontroller;
       $controller = new login();
       $controller->loadModel($url[0]);
+      $controller->render();
       return false;
     }
 
@@ -20,14 +21,24 @@ class App{
         require_once $filecontroller;
         $controller = new $url[0];
         $controller->loadModel($url[0]);
+        $nparam = sizeof($url);
 
-if(isset($url[1])){
-  $controller->{$url[1]}();
-}
-
+        if ($nparam > 1) {
+          if ($nparam > 2) {
+            $param = [];
+            for ($i = 2; $i < $nparam; $i++) {
+              array_push($param, $url[$i]);
+            }
+            $controller->{$url[1]}($param);
+          } else {
+            $controller->{$url[1]}();
+          }
+        } else {
+          $controller->render();
+        }
       } else {
-          require_once "controllers/errors.php";
-$controller = new Errors();
+        require_once "controllers/errors.php";
+        $controller = new Errors();
       }
-    }
-}
+    } 
+  }

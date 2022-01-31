@@ -11,7 +11,9 @@ class dashboardModel extends Model {
         );
         try {
             if ($query->execute()){
-                return $query->fetch(PDO::FETCH_ASSOC);
+                 while($row = $query->fetch(PDO::FETCH_ASSOC)){
+                  print_r($row);
+                 }
             } else {
                 return false;
             }
