@@ -12,7 +12,6 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 
   function loadEmployeeTable(employees) {
-    console.log("hola");
     $("#jsGrid").jsGrid({
       width: "100%",
       height: "700px", //800max
@@ -37,8 +36,7 @@ window.addEventListener("DOMContentLoaded", async () => {
           validate: "required",
         },
         { name: "email", type: "text", width: 200, title: "Email" },
-        { name: "age", type: "text", width: 50, title: "Age" },
-        { name: "streetAddress", type: "text", title: "Street No." },
+        { name: "streetAdress", type: "text", title: "Street No." },
         { name: "city", type: "text", title: "City" },
         { name: "state", type: "text", width: 50, title: "State" },
         { name: "postalCode", type: "number", title: "Postal Code" },

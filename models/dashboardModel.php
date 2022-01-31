@@ -1,24 +1,34 @@
 <?php
-
+include_once "models/employee.php";
 class dashboardModel extends Model {
     public function __construct()
     {
         parent::__construct();
     }
     public function getEmployees(){
-        $query = $this->db->connect()->prepare(
-            "SELECT * FROM employees"
-        );
+$items = [];
         try {
-            if ($query->execute()){
+            $query = $this->db->connect()->query("SELECT * FROM employees");
+           
                  while($row = $query->fetch(PDO::FETCH_ASSOC)){
-                  print_r($row);
+                  $item = new employee();
+                  $item->id = $row["id"];
+                  $item->name = $row["name"];
+                  $item->lasName = $row["lasName"];
+                  $item->email = $row["email"];
+                  $item->gender = $row["gender"];
+                  $item->streetAdress = $row["streetAdress"];
+                  $item->city = $row["city"];
+                  $item->state = $row["state"];
+                  $item->postalCode = $row["postalCode"];
+                  $item->phoneNumber = $row["phoneNumber"];
+                  array_push($items, $item);
+
                  }
-            } else {
-                return false;
+                 return $items;
             }
 
-    } catch(PDOException $e){
+     catch(PDOException $e){
         return false;
     }
     }

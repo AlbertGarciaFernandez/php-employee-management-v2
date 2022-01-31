@@ -10,7 +10,7 @@
     
 
         <!-- todo  Import CSS and Javascript-->
-        <link rel="stylesheet" href="<?= ASSETS?>css/main.css">
+        <link rel="stylesheet" href="<?= BASE_URL?>/css/main.css">
         <!-- <script src="../assets/js/index.js" defer></script> -->
         <!-- <script src="../assert" defer></script> -->
         <title> Rocket Employee Management </title>
