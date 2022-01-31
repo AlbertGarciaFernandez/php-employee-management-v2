@@ -1,3 +1,4 @@
+
 <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
@@ -16,7 +17,7 @@
         </ul>
         <ul class="navbar-nav px-3">
           <li class="nav-item text-nowrap">
-              <a class="nav-link" href="../src/library/loginController.php?logout">Log out</a>
+              <a class="nav-link" href="<?= BASE_URL?>/login/logout?logout">Log out</a>
           </li>
           </ul>
       </div>

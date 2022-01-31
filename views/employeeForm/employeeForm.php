@@ -49,7 +49,7 @@
       </div>';
     }
     ?>
-            <div><?php if(isset($this->message)){
+            <div><?php if(($this->message !== "Error message")){
                 echo $this->message;
                 }?></div>
   <form class="w-50 mx-auto" method="POST" action=<?= isset($url[2]) ? "./library/employeeController.php?editEmployee_Form ": BASE_URL . "/employeeForm/addFormEmployee" ?>>
