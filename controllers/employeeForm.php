@@ -20,12 +20,24 @@ class employeeForm extends Controller{
         $url = explode("/", $url);
     
       if( isset($url[2])){
-          $hello = "hello";
         $this->view->employee =  $this->model->getEmployee($url[2]);
-         $this->view->render("employeeForm/employeeForm");
-           
+         $this->view->render("employeeForm/employeeForm");   
         }
-        
-       
+    }
+
+    public function addFormEmployee(){
+        $name = $_POST["name"];
+        $lasName = $_POST["lastName"];
+        $email = $_POST["email"];
+        $gender = $_POST["gender"];
+        $city = $_POST["city"];
+        $sreetAdress = $_POST["streetAddress"];
+        $state = $_POST["state"];
+        $postalCode = $_POST["postalCode"];
+        $phoneNumber = $_POST["phoneNumber"];
+
+        $this->newEmployee =  $this->model->addFormEmployee(["name" => $name, "lasName"=>$lasName, "email"=>$email, "gender"=>$gender, "city"=>$city, "streetAdress"=>$sreetAdress, "state"=>$state, "postalCode"=>$postalCode, "phoneNumber"=>$phoneNumber]);
+
+
     }
 }

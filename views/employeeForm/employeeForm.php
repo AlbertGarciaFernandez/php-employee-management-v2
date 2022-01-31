@@ -50,7 +50,7 @@
     }
     ?>
     
-  <form class="w-50 mx-auto" method="POST" action=<?= isset($url[2]) ? "./library/employeeController.php?editEmployee_Form ": "./library/employeeController.php?addEmployee_Form" ?>>
+  <form class="w-50 mx-auto" method="POST" action=<?= isset($url[2]) ? "./library/employeeController.php?editEmployee_Form ": BASE_URL . "/employeeForm/addFormEmployee" ?>>
       <div class="form-row">
           <div class="form-group col-md-6">
               <label for="inputName">Name</label>
