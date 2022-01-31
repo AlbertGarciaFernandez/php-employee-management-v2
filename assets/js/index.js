@@ -51,8 +51,8 @@ window.addEventListener("DOMContentLoaded", async () => {
         deleteItem: function name(item) {
           return $.ajax({
             type: "DELETE",
-            url: "./library/employeeController.php?deleteEmployee",
-            data: item,
+            url: "http://localhost/php-employee-management-v2/employeeForm/deleteEmployee",
+            data: JSON.stringify(item),
           });
         },
   

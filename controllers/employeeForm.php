@@ -68,4 +68,10 @@ class employeeForm extends Controller{
           }
     
     }
+
+    public function deleteEmployee(){
+      $string=(file_get_contents("php://input"));
+      $data = json_decode($string);
+$this->model->deleteGridEmployee($data->id);
+    }
 }
