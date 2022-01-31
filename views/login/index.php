@@ -12,9 +12,7 @@
         session_start();
         if(isset($_SESSION["admin"])){
           header("Location:" . BASE_URL . "/dashboard");
-        } else {
-
-        } ?>
+        }?>
 <body>
   <section class=" gradient-custom">
     <div class="container py-5 h-90 ">
