@@ -20,6 +20,12 @@ require ASSETS . "html/header.php";
 <body>
     <?php
         require ASSETS . "html/navbar.php";
+        session_start();
+        if(isset($_SESSION["admin"])){
+
+        } else {
+            header("Location:" . BASE_URL . "/login");
+        }
     ?>
 
     <section>

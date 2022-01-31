@@ -40,14 +40,12 @@
     }
     ?>
     <?php 
-    if(isset($_GET["updated"])){
-        echo '<div class="alert alert-warning alert-dismissible fade show w-75 mx-auto" role="alert">
-        Employee <strong>'.$employee["name"].'</strong> has been updated in the database.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>';
-    }
+        session_start();
+        if(isset($_SESSION["admin"])){
+
+        } else {
+            header("Location:" . BASE_URL . "/login");
+        }
     ?>
             <div><?php if(($this->message !== "Error message")){
                 echo $this->message;
