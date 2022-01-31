@@ -36,7 +36,13 @@ class employeeForm extends Controller{
         $postalCode = $_POST["postalCode"];
         $phoneNumber = $_POST["phoneNumber"];
 
-        $this->newEmployee =  $this->model->addFormEmployee(["name" => $name, "lasName"=>$lasName, "email"=>$email, "gender"=>$gender, "city"=>$city, "streetAdress"=>$sreetAdress, "state"=>$state, "postalCode"=>$postalCode, "phoneNumber"=>$phoneNumber]);
+      if($this->model->addFormEmployee(["name" => $name, "lasName"=>$lasName, "email"=>$email, "gender"=>$gender, "city"=>$city, "streetAdress"=>$sreetAdress, "state"=>$state, "postalCode"=>$postalCode, "phoneNumber"=>$phoneNumber])){
+        $this->view->message = "Added new employee";
+        $this->view->render("employeeForm/employeeForm");
+      } else {
+        $this->view->message = "failed to add new employee";
+        $this->view->render("error/error");
+      }
 
 
     }
