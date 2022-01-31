@@ -56,11 +56,16 @@ window.addEventListener("DOMContentLoaded", async () => {
           });
         },
   
-        insertItem: function name(item) {
+        insertItem:  function name(item) {
           return $.ajax({
             type: "POST",
-            url: "./library/employeeController.php?addEmployee",
-            data: item,
+            url: "http://localhost/php-employee-management-v2/employeeForm/addGridEmployee",
+            data: JSON.stringify(item),
+            success: async function(data)          
+            {   
+              let employees = await getEmployees();
+              loadEmployeeTable(employees);
+            },
           });
         },
       },

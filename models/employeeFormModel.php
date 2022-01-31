@@ -68,4 +68,16 @@ class employeeFormModel extends Model
             return null;
         }
     }
+
+    public function addGridEmployee($data){
+        try {
+            $query = $this->db->connect()->prepare(
+                "INSERT INTO employees (name,  email,  streetAdress, city, state, postalCode, phoneNumber) VALUES (:name, :email,  :streetAdress, :city, :state, :postalCode, :phoneNumber)"
+            );
+            $query->execute(["name" => $data->name,  "email" => $data->email,  "streetAdress" => $data->streetAdress, "city" => $data->city, "state" => $data->state, "postalCode" => $data->postalCode, "phoneNumber" => $data->phoneNumber]);
+            return true;
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
 }
