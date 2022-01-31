@@ -19,7 +19,7 @@ require ASSETS . "html/header.php";
 <!-- todo when the page load call function to fill the table -->
 <body>
     <?php
-        require ASSETS . "html/navbar.php";
+        require BASE_URL . "/assets/html/navbar.php";
     ?>
 
     <section>

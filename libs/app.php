@@ -40,5 +40,5 @@ class App{
         require_once "controllers/errors.php";
         $controller = new Errors();
       }
-    } 
+    }
   }

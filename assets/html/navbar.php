@@ -8,16 +8,6 @@
             </span>
         </div>
         <div class="col d-flex">
-            <span id="filelocation">
-                <!-- todo script to find the actual Page and write -->
-                <script>
-                    var divlocation = document.getElementById('filelocation');
-                    var winloc = window.location.pathname.split('/');
-                    var dirname = winloc[4].split('.');
-                    console.log(dirname[0]);
-                    divlocation.append(dirname[0]);
-                </script>
-            </span>
         </div>
         <div class="col d-flex justify-content-end">
             <form action="<?=BASE_URL?>/login/logout" method="POST">
