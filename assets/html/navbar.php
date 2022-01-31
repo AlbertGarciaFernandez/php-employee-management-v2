@@ -1,29 +1,24 @@
-<!--todo html Navbar content --> 
-
-<nav class="navbar navbar-dark bg-dark">
-    <div class="container">
-        <div class="col d-flex ">
-            <span>
-                <i class="fas fa-rocket"> Rocket Employee System</i>
-            </span>
-        </div>
-        <div class="col d-flex">
-            <span id="filelocation">
-                <!-- todo script to find the actual Page and write -->
-                <script>
-                    var divlocation = document.getElementById('filelocation');
-                    var winloc = window.location.pathname.split('/');
-                    var dirname = winloc[4].split('.');
-                    console.log(dirname[0]);
-                    divlocation.append(dirname[0]);
-                </script>
-            </span>
-        </div>
-        <div class="col d-flex justify-content-end">
-            <form action="<?=BASE_URL?>/login/logout" method="POST">
-                <button class="d-flex justify-content-end btn btn-light " type="submit" name="logout">Log out </button>
-            </form>
-        </div>
-
-    </div>
-</nav>
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
+      <a class="navbar-brand" href="#">Employees Management</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item <?= $_SERVER['SCRIPT_NAME']=="/PHP-EMPLOYEE-MANAGEMENT-V1/src/dashboard.php" ? "active": "" ?>">
+            <a class="nav-link" href="./dashboard.php">Dashboard</a>
+          </li>
+          <li class="nav-item <?= $_SERVER['SCRIPT_NAME']=="/PHP-EMPLOYEE-MANAGEMENT-V1/src/employee.php" ? "active": "" ?>">
+            <a class="nav-link" href="./employee.php">Employee</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav px-3">
+          <li class="nav-item text-nowrap">
+              <a class="nav-link" href="../src/library/loginController.php?logout">Log out</a>
+          </li>
+          </ul>
+      </div>
+    </nav>
+</header>
