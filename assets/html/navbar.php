@@ -11,7 +11,7 @@
             <a class="nav-link" href="<?=BASE_URL?>/dashboard">Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./employee.php">Employee</a>
+            <a class="nav-link" href="<?=BASE_URL?>/employeeForm">Employee</a>
           </li>
         </ul>
         <ul class="navbar-nav px-3">

@@ -1,6 +1,6 @@
 <?php 
 //require_once("./employeeManager.php");
-class employee extends Controller{
+class employew extends Controller{
     function __construct()
     {
         parent::__construct();
