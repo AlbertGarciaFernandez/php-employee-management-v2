@@ -15,7 +15,7 @@ class login extends Controller{
         $pass = $_POST["password"];
         $userCheck = $this->model->userCheck($user);
           if($userCheck === false){
-             header(BASE_URL);
+        header("Location:". BASE_URL . "/login?failedLog");
           } else {
              $passCheck = password_verify($pass, $userCheck["pass"]);
              if($passCheck === true){
@@ -24,7 +24,7 @@ class login extends Controller{
                 unset($_POST);
                  header("Location:" .BASE_URL . "/dashboard");
              } else {
-                header("Location:". BASE_URL . "/login?loginError");
+        header("Location:". BASE_URL . "/login?failedLog");
              }
           }
     }

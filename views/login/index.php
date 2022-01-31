@@ -22,7 +22,7 @@
                 <form action="<?php echo  BASE_URL ?>/login/logIn" method="post">
                   <div class="form-outline form-white mb-4">
                     <input name="email" type="text" id="typeEmailX" class="form-control form-control-lg" />
-                    <label class="form-label" for="typeEmailX">Email</label>
+                    <label class="form-label" for="typeEmailX">Email or user</label>
                   </div>
 
                   <div class="form-outline form-white mb-4">
