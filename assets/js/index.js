@@ -12,7 +12,6 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 
   function loadEmployeeTable(employees) {
-    console.log("hola");
     $("#jsGrid").jsGrid({
       width: "100%",
       height: "700px", //800max
