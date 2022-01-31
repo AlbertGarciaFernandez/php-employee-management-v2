@@ -52,7 +52,7 @@
             <div><?php if(($this->message !== "Error message")){
                 echo $this->message;
                 }?></div>
-  <form class="w-50 mx-auto" method="POST" action=<?= isset($url[2]) ? "./library/employeeController.php?editEmployee_Form ": BASE_URL . "/employeeForm/addFormEmployee" ?>>
+  <form class="w-50 mx-auto" method="POST" action=<?= isset($url[2]) ?  BASE_URL . "/employeeForm/updateEmployeeForm": BASE_URL . "/employeeForm/addFormEmployee" ?>>
       <div class="form-row">
           <div class="form-group col-md-6">
               <label for="inputName">Name</label>

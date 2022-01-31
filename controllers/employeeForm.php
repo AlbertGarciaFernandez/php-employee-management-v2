@@ -46,4 +46,26 @@ class employeeForm extends Controller{
 
 
     }
+
+    public function updateEmployeeForm(){
+        $id = $_POST["id"];
+        $name = $_POST["name"];
+        $lasName = $_POST["lastName"];
+        $email = $_POST["email"];
+        $gender = $_POST["gender"];
+        $city = $_POST["city"];
+        $sreetAdress = $_POST["streetAddress"];
+        $state = $_POST["state"];
+        $postalCode = $_POST["postalCode"];
+        $phoneNumber = $_POST["phoneNumber"];
+
+        if($this->model->updateEmployeeForm(["name" => $name, "lasName"=>$lasName, "email"=>$email, "gender"=>$gender, "city"=>$city, "streetAdress"=>$sreetAdress, "state"=>$state, "postalCode"=>$postalCode, "phoneNumber"=>$phoneNumber, "id"=>$id])){
+            $this->view->message = "Employee updated";
+            $this->view->render("employeeForm/employeeForm");
+          } else {
+            $this->view->message = "failed to add new employee";
+            $this->view->render("error/error");
+          }
+    
+    }
 }
